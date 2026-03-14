@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Title is overwritten by arcane.js once the entry loads -->
+  <title>Entry — The Arcane Archive</title>
+  <meta name="description" content="An entry in the Arcane Archive — a directory of esoteric knowledge." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="arcane.css" />
+</head>
+<body>
+
+  <!-- ── BREADCRUMB NAV ──────────────────────────────────────────── -->
+  <nav class="arc-entry-nav" aria-label="Breadcrumb">
+    <a href="index.html" class="arc-nav-home">&#x25C1; The Arcane Archive</a>
+    <span class="arc-nav-sep" aria-hidden="true">/</span>
+    <span class="arc-nav-title" id="arc-nav-title" aria-current="page">&#x2014;</span>
+  </nav>
+
+  <!-- ── ENTRY CONTENT (rendered by arcane.js) ───────────────────── -->
+  <div id="arc-entry-root"></div>
+
+  <script src="arcane.js"></script>
+</body>
+</html>

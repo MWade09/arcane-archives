@@ -750,6 +750,40 @@ a:hover { color: var(--clr-gold-3); }
   margin-block: 0.8rem 1.4rem;
   line-height: 1.6;
 }
+.footer-stories {
+  margin-block: 1.6rem 1.8rem;
+}
+.footer-stories__label {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-bottom: 0.7rem;
+}
+.footer-stories__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--clr-text-dim);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.footer-stories__link:hover {
+  color: var(--clr-gold-2);
+  border-color: rgba(200, 168, 74, 0.35);
+  background: var(--clr-gold-glow);
+}
+.footer-stories__sigil {
+  font-family: var(--font-display);
+  color: var(--clr-gold-1);
+  font-size: 1rem;
+  line-height: 1;
+}
 
 /* ════════════════════════════════════════════════════════════════
    CHAPTER IMAGES

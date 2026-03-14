@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Arcane Archive — A Directory of Esoteric Knowledge</title>
+  <meta name="description" content="A curated directory of arcane and esoteric knowledge — traditions, figures, texts, symbols, and foundational concepts of the Western esoteric inheritance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="arcane.css" />
+</head>
+<body>
+
+  <!-- ── HERO ──────────────────────────────────────────────────────── -->
+  <header class="arc-hero" id="top">
+    <div class="arc-hero__content">
+      <a href="../index.html" class="arc-hero__back">&#x2190; Return to Saturn</a>
+      <span class="arc-hero__sigil" aria-hidden="true">✦</span>
+      <p class="arc-hero__eyebrow">A Living Reference</p>
+      <h1 class="arc-hero__title">The Arcane Archive</h1>
+      <p class="arc-hero__subtitle">
+        A growing directory of esoteric traditions, foundational figures, 
+        primary texts, symbols, and core concepts of the Western esoteric heritage.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── FILTER BAR ────────────────────────────────────────────────── -->
+  <div class="arc-filters" id="arc-filters">
+    <div class="container container--wide arc-filters-inner">
+
+      <div class="arc-tab-list" role="tablist" aria-label="Filter by category">
+        <button class="arc-tab is-active" data-cat="all"        role="tab" aria-selected="true">All</button>
+        <button class="arc-tab"           data-cat="traditions" role="tab" aria-selected="false">Traditions</button>
+        <button class="arc-tab"           data-cat="figures"    role="tab" aria-selected="false">Figures</button>
+        <button class="arc-tab"           data-cat="texts"      role="tab" aria-selected="false">Texts</button>
+        <button class="arc-tab"           data-cat="symbols"    role="tab" aria-selected="false">Symbols</button>
+        <button class="arc-tab"           data-cat="concepts"   role="tab" aria-selected="false">Concepts</button>
+      </div>
+
+      <div class="arc-filters-right">
+        <span class="arc-count" id="arc-count" aria-live="polite"></span>
+        <input
+          class="arc-search"
+          type="search"
+          placeholder="Search the archive&#x2026;"
+          aria-label="Search entries"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── ENTRY GRID ─────────────────────────────────────────────────── -->
+  <main class="arc-main container container--wide">
+    <div class="arc-grid" id="arc-grid" role="list" aria-label="Archive entries">
+      <!-- Cards are rendered by arcane.js -->
+    </div>
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer class="arc-footer">
+    <div class="container">
+      <p>
+        Part of <a href="../index.html">Saturn — The Celestial King</a>.
+        Entries are added as research is sourced and verified.
+      </p>
+    </div>
+  </footer>
+
+  <script src="arcane.js"></script>
+</body>
+</html>
