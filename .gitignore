@@ -1,0 +1,9 @@
+# Ignore node modules
+node_modules
+
+#ignore .env files
+.env
+.env.local.example
+
+# next build output
+.next

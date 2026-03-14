@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+   Custom properties, global reset, shared utilities, buttons.
+   Imported first so all other stylesheets can consume these vars.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── CUSTOM PROPERTIES ───────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --clr-bg:          #0a0a0f;
+  --clr-bg-alt:      #0f0f18;
+  --clr-surface:     #141420;
+  --clr-border:      rgba(200, 170, 90, 0.12);
+
+  /* Gold palette */
+  --clr-gold-1:      #c8a84a;
+  --clr-gold-2:      #e2c774;
+  --clr-gold-3:      #f5e6b0;
+  --clr-gold-glow:   rgba(200, 168, 74, 0.15);
+
+  /* Text */
+  --clr-text:        #ddd5c0;
+  --clr-text-dim:    #8a7f6a;
+  --clr-text-muted:  #4a4438;
+
+  /* Accent (violet) */
+  --clr-accent:      #7b5ea7;
+  --clr-accent-glow: rgba(123, 94, 167, 0.2);
+
+  /* Typography */
+  --font-display: 'Cinzel', 'Palatino Linotype', serif;
+  --font-body:    'EB Garamond', 'Georgia', serif;
+  --font-ui:      'Inter', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  7rem;
+  --space-2xl: 11rem;
+
+  /* Layout */
+  --container:      820px;
+  --container-wide: 1100px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:  cubic-bezier(0.64, 0, 0.78, 0);
+}
+
+/* ── GLOBAL RESET ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.8vw, 1.175rem);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a   { color: var(--clr-gold-2); text-decoration: none; }
+a:hover { color: var(--clr-gold-3); }
+
+/* ── LAYOUT UTILITIES ────────────────────────────────────────── */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.2rem, 5vw, 3rem);
+}
+.container--wide { max-width: var(--container-wide); }
+
+/* ── SHARED COMPONENTS ───────────────────────────────────────── */
+.sigil {
+  font-family: var(--font-display);
+  color: var(--clr-gold-1);
+  font-size: 1.6rem;
+  line-height: 1;
+  display: inline-block;
+}
+.sigil.large { font-size: 3rem; display: block; margin-bottom: 1rem; }
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85em 2.2em;
+  border-radius: var(--radius-sm);
+  transition: background 0.25s, color 0.25s, box-shadow 0.25s, transform 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--clr-gold-1), var(--clr-gold-2));
+  color: #0a0a0f;
+  box-shadow: 0 0 40px var(--clr-gold-glow);
+}
+.btn--primary:hover {
+  background: linear-gradient(135deg, var(--clr-gold-2), var(--clr-gold-3));
+  color: #0a0a0f;
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(200, 168, 74, 0.35);
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--clr-gold-1);
+  color: var(--clr-gold-2);
+}
+.btn--ghost:hover {
+  background: var(--clr-gold-glow);
+  color: var(--clr-gold-3);
+}
+
+.btn--sm { font-size: 0.65rem; padding: 0.6em 1.4em; }

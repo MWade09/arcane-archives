@@ -1,0 +1,15 @@
+/* ═══════════════════════════════════════════════════════════════
+   THE ARCHIVE — GLOBAL DESIGN SYSTEM
+   Split into per-feature files under app/styles/.
+   This file is the single import entry point.
+   ═══════════════════════════════════════════════════════════════ */
+
+@import './styles/tokens.css';
+@import './styles/nav.css';
+@import './styles/saturn.css';
+@import './styles/arcane.css';
+@import './styles/landing.css';
+@import './styles/auth.css';
+@import './styles/dashboard.css';
+@import './styles/responsive.css';
+

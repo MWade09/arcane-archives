@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE OVERRIDES
+   Breakpoints for all feature areas. Order: largest → smallest.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Dashboard sidebar hidden on narrow screens ──────────────── */
+@media (max-width: 900px) {
+  .dash-sidebar { display: none; }
+}
+
+/* ── General small-screen adjustments ───────────────────────── */
+@media (max-width: 700px) {
+  /* Saturn rings */
+  .ring--1 { width: 90vw; }
+  .ring--2 { width: 110vw; }
+  .ring--3 { width: 130vw; }
+
+  /* Saturn article */
+  .closing-triad  { grid-template-columns: 1fr; }
+  .alchemy-diagram { flex-direction: column; align-items: stretch; }
+  .alc-arrow      { transform: rotate(90deg); }
+  .duality-block  { flex-direction: column; }
+  .duality-divider { display: none; }
+  .chapter-layout { gap: var(--space-md); }
+  .chapter-header { padding-left: 1rem; }
+  .toc-grid       { grid-template-columns: repeat(2, 1fr); }
+
+  /* Arcane archive */
+  .arc-filters-inner { gap: 0.65rem; }
+  .arc-filters-right { width: 100%; }
+  .arc-search        { width: 100%; }
+  .arc-grid          { grid-template-columns: 1fr; }
+
+  /* Landing */
+  .landing-portal-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Respect reduced-motion preference ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
