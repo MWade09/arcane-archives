@@ -7,9 +7,13 @@
 @import './styles/tokens.css';
 @import './styles/nav.css';
 @import './styles/saturn.css';
+@import './styles/jupiter.css';
+@import './styles/mars.css';
+@import './styles/planets.css';
 @import './styles/arcane.css';
 @import './styles/landing.css';
 @import './styles/auth.css';
 @import './styles/dashboard.css';
 @import './styles/responsive.css';
+@import './styles/widgets.css';
 

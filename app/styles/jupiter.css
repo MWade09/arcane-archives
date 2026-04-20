@@ -1,0 +1,415 @@
+/* ═══════════════════════════════════════════════════════════════
+   JUPITER ARTICLE
+   Hero orb/bands, table of contents overrides, Jupiter-specific
+   callouts, sovereignty diagram, cosmic crown info cards,
+   architects list, throne triad, closing elements.
+   Inherits all global chapter/layout/nav classes from saturn.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── JUPITER HERO ────────────────────────────────────────────── */
+.jupiter-hero {
+  background: radial-gradient(ellipse 80% 60% at 50% 55%, #081428 0%, var(--clr-bg) 70%);
+}
+
+.jupiter-orb {
+  position: absolute;
+  width: clamp(200px, 40vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 38% 38%,
+    #e8d4aa 0%, #c8a86a 18%, #b87d4a 32%, #d4b078 46%, #a06438 58%, #c89060 70%, #8a5430 85%, #1a0e06 100%
+  );
+  box-shadow:
+    0 0 80px rgba(74, 120, 180, 0.4),
+    0 0 200px rgba(40, 80, 140, 0.25),
+    inset -30px -30px 60px rgba(0, 0, 0, 0.55),
+    inset 20px 20px 40px rgba(200, 160, 80, 0.15);
+  animation: jup-orb-pulse 7s ease-in-out infinite alternate;
+  top: 50%; left: 50%;
+  translate: -50% -56%;
+  z-index: 2;
+}
+
+/* Atmospheric bands layered via pseudo-elements */
+.jupiter-orb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 5%,
+      rgba(160, 100, 40, 0.35) 5%,
+      rgba(160, 100, 40, 0.35) 9%,
+      transparent 9%,
+      transparent 14%,
+      rgba(120, 70, 20, 0.25) 14%,
+      rgba(120, 70, 20, 0.25) 17%,
+      transparent 17%,
+      transparent 23%,
+      rgba(180, 120, 60, 0.3)  23%,
+      rgba(180, 120, 60, 0.3)  27%,
+      transparent 27%,
+      transparent 33%,
+      rgba(100, 55, 15, 0.2)   33%,
+      rgba(100, 55, 15, 0.2)   36%,
+      transparent 36%,
+      transparent 42%,
+      rgba(160, 100, 40, 0.28) 42%,
+      rgba(160, 100, 40, 0.28) 46%,
+      transparent 46%,
+      transparent 52%,
+      rgba(140, 90, 30, 0.22)  52%,
+      rgba(140, 90, 30, 0.22)  55%,
+      transparent 55%,
+      transparent 62%,
+      rgba(180, 120, 55, 0.3)  62%,
+      rgba(180, 120, 55, 0.3)  67%,
+      transparent 67%,
+      transparent 73%,
+      rgba(120, 70, 20, 0.2)   73%,
+      rgba(120, 70, 20, 0.2)   76%,
+      transparent 76%
+    );
+}
+
+/* Great Red Spot */
+.jupiter-orb::after {
+  content: '';
+  position: absolute;
+  width: 22%;
+  aspect-ratio: 1.6 / 1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #8b2800 0%, #a03520 40%, #7a2010 70%, transparent 100%);
+  top: 56%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  filter: blur(2px);
+  opacity: 0.85;
+  animation: red-spot-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes jup-orb-pulse {
+  from {
+    box-shadow:
+      0 0 80px rgba(74, 120, 180, 0.4), 0 0 200px rgba(40, 80, 140, 0.25),
+      inset -30px -30px 60px rgba(0, 0, 0, 0.55), inset 20px 20px 40px rgba(200, 160, 80, 0.15);
+  }
+  to {
+    box-shadow:
+      0 0 120px rgba(100, 150, 220, 0.5), 0 0 280px rgba(60, 100, 180, 0.3),
+      inset -30px -30px 60px rgba(0, 0, 0, 0.55), inset 20px 20px 40px rgba(220, 180, 100, 0.22);
+  }
+}
+
+@keyframes red-spot-drift {
+  from { transform: translate(-50%, -50%) scale(1);   opacity: 0.85; }
+  to   { transform: translate(-46%, -52%) scale(1.06); opacity: 0.95; }
+}
+
+/* ── JUPITER ATMOSPHERIC BANDS (replaces Saturn rings) ───────── */
+.jupiter-bands {
+  position: absolute;
+  top: 50%; left: 50%;
+  translate: -50% -56%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.jband {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  transform-origin: center center;
+  border: 1px solid transparent;
+}
+
+.jband--1 {
+  width: clamp(280px, 54vw, 620px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-color: rgba(180, 140, 70, 0.18);
+  box-shadow: 0 0 40px rgba(180, 130, 60, 0.12);
+  animation: jband-pulse 8s ease-in-out infinite alternate;
+}
+
+.jband--2 {
+  width: clamp(340px, 66vw, 760px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-color: rgba(100, 160, 220, 0.12);
+  box-shadow: 0 0 60px rgba(80, 130, 200, 0.08);
+  animation: jband-pulse 8s ease-in-out 0.6s infinite alternate;
+}
+
+.jband--3 {
+  width: clamp(400px, 78vw, 900px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-color: rgba(180, 140, 70, 0.07);
+  animation: jband-pulse 8s ease-in-out 1.2s infinite alternate;
+}
+
+@keyframes jband-pulse {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+/* ── JUPITER HERO TITLE GRADIENT ─────────────────────────────── */
+.jupiter-hero .hero__title {
+  background: linear-gradient(180deg, #c8d8f0 0%, #7aabdc 40%, #3a72b8 80%, #1a3a70 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(80, 140, 220, 0.4));
+}
+
+.jupiter-hero .hero__eyebrow {
+  color: #7aabdc;
+}
+
+/* ── CHAPTER DIVIDER: JUPITER SIGIL ──────────────────────────── */
+.jupiter-divider .sigil {
+  color: #5a90d0;
+}
+
+/* ── SOVEREIGNTY DIAGRAM ─────────────────────────────────────── */
+.sovereignty-diagram {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-block: 2rem;
+  flex-wrap: wrap;
+}
+
+.sov-pole {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.sov-pole--jupiter {
+  background: rgba(74, 120, 180, 0.08);
+  border: 1px solid rgba(74, 120, 180, 0.25);
+}
+
+.sov-pole--saturn {
+  background: rgba(200, 168, 74, 0.05);
+  border: 1px solid rgba(200, 168, 74, 0.18);
+}
+
+.sov-pole h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sov-pole--jupiter h3 { color: #7aabdc; }
+.sov-pole--saturn  h3 { color: var(--clr-gold-2); }
+
+.sov-pole p {
+  font-size: 0.85rem;
+  color: var(--clr-text-dim);
+  line-height: 1.55;
+}
+
+.sov-arrow {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--clr-text-muted);
+  flex-shrink: 0;
+}
+
+/* ── STORM CALLOUT ───────────────────────────────────────────── */
+.callout--storm {
+  background: rgba(74, 100, 180, 0.07);
+  border: 1px solid rgba(74, 100, 180, 0.25);
+  border-left: 3px solid #4a7fc1;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.2rem 1.5rem;
+  margin-block: 1.5rem;
+}
+
+.callout--storm p {
+  color: var(--clr-text-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ── ARCHITECTS LIST ─────────────────────────────────────────── */
+.architects-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-block: 1.8rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.architect-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  transition: background 0.2s;
+}
+
+.architect-item:last-child { border-bottom: none; }
+.architect-item:hover { background: rgba(74, 120, 180, 0.06); }
+
+.architect-item__glyph {
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-top: 0.15rem;
+  opacity: 0.7;
+}
+
+.architect-item__body strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #7aabdc;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.architect-item__body p {
+  font-size: 0.9rem;
+  color: var(--clr-text-dim);
+  margin: 0 !important;
+  line-height: 1.55;
+}
+
+/* ── JUPITER CLOSING TRIAD ───────────────────────────────────── */
+.jupiter-triad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--clr-border);
+}
+
+.jtriad-item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.jtriad-item:hover {
+  background: rgba(74, 120, 180, 0.06);
+  border-color: rgba(74, 120, 180, 0.3);
+}
+
+.jtriad-symbol {
+  display: block;
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.jtriad-item:nth-child(1) .jtriad-symbol { color: #7aabdc; }
+.jtriad-item:nth-child(2) .jtriad-symbol { color: var(--clr-gold-1); }
+.jtriad-item:nth-child(3) .jtriad-symbol { color: #a87050; }
+
+.jtriad-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--clr-gold-2);
+  margin-bottom: 0.6rem;
+}
+
+.jtriad-desc {
+  font-size: 0.82rem;
+  color: var(--clr-text-dim);
+  line-height: 1.6;
+}
+
+/* ── JUPITER CHAPTER HEADER ACCENT ──────────────────────────── */
+.jupiter-page .chapter-header {
+  border-left-color: #4a7fc1;
+}
+
+.jupiter-page .chapter-num {
+  color: #7aabdc;
+}
+
+.jupiter-page .chapter-title {
+  color: #a8c8e8;
+}
+
+.jupiter-page .chapter-intro__heading {
+  color: #a8c8e8;
+}
+
+.jupiter-page .pull-quote {
+  border-left-color: #4a7fc1;
+  color: #a8c8e8 !important;
+}
+
+.jupiter-page .chapter-quote {
+  border-left-color: #4a7fc1;
+  background: rgba(74, 120, 180, 0.04);
+}
+
+.jupiter-page .toc-card:hover {
+  background: rgba(74, 120, 180, 0.08);
+  color: #7aabdc;
+}
+
+.jupiter-page .toc-num {
+  color: #7aabdc;
+}
+
+.jupiter-page .chapter-body strong {
+  color: #a8c8e8;
+}
+
+.jupiter-page .chapter-body em {
+  color: #c8ddf0;
+}
+
+.jupiter-page .info-card:hover {
+  border-color: rgba(74, 120, 180, 0.35);
+}
+
+.jupiter-page .info-card__title {
+  color: #7aabdc;
+}
+
+.jupiter-page .section-eyebrow {
+  color: #7aabdc;
+}
+
+.jupiter-page .btn--primary {
+  background: rgba(74, 120, 180, 0.15);
+  border-color: rgba(74, 120, 180, 0.5);
+  color: #a8c8e8;
+}
+
+.jupiter-page .btn--primary:hover {
+  background: rgba(74, 120, 180, 0.28);
+  border-color: rgba(100, 150, 220, 0.75);
+}
+
+/* ── RESPONSIVE OVERRIDES ────────────────────────────────────── */
+@media (max-width: 600px) {
+  .sovereignty-diagram { flex-direction: column; }
+  .sov-arrow { transform: rotate(90deg); }
+  .jupiter-triad { grid-template-columns: 1fr; }
+}

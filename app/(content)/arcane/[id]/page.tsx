@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ARCANE_ENTRIES, CATEGORIES, findEntry } from '@/lib/arcane/data'
+import ReadingTracker from '@/app/components/ReadingTracker'
+import SmartSummarizer from '@/app/components/SmartSummarizer'
 
 interface Props {
   params: Promise<{ id: string }>
@@ -38,6 +40,7 @@ export default async function ArcaneEntryPage({ params }: Props) {
 
   return (
     <>
+      <ReadingTracker />
       {/* ── BREADCRUMB NAV ───────────────────────────────────── */}
       <nav className="arc-entry-nav" aria-label="Breadcrumb">
         <Link href="/" className="arc-nav-home">The Archive</Link>
@@ -71,6 +74,9 @@ export default async function ArcaneEntryPage({ params }: Props) {
         </header>
 
         <div className="arc-entry__body container">
+          {/* ── AI SUMMARY ───────────────────────────────────── */}
+          <SmartSummarizer />
+
           {/* ── SUMMARY ──────────────────────────────────────── */}
           <p className="arc-entry__summary">{entry.summary}</p>
 

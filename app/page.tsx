@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'The Archive',
   description:
-    'A platform for deep esoteric research — explore Saturn, the Arcane Archive, and build your own knowledge base.',
+    'A platform for deep esoteric research — explore the Planetary Archives, the Arcane Archive, and build your own knowledge base.',
 }
 
 export default function HomePage() {
@@ -16,24 +16,24 @@ export default function HomePage() {
         <div className="landing-sigil" aria-hidden="true">⊕</div>
         <h1 className="landing-title">The Archive</h1>
         <p className="landing-subtitle">
-          Deep explorations of myth, symbol, and philosophy — from the Saturn archetype to
+          Deep explorations of myth, symbol, and philosophy — from the planetary archetypes to
           the hermetic inheritance. Read, annotate, collect, and repurpose what you find.
         </p>
         <div className="landing-cta-row">
-          <Link href="/saturn" className="btn btn--primary">Begin Reading</Link>
+          <Link href="/planets" className="btn btn--primary">Begin Reading</Link>
           <Link href="/arcane" className="btn btn--ghost">Arcane Archive</Link>
         </div>
       </section>
 
       {/* ── PORTAL GRID ──────────────────────────────────────────── */}
       <div className="landing-portal-grid">
-        <Link href="/saturn" className="portal-card">
-          <span className="portal-card__sigil" aria-hidden="true">♄</span>
+        <Link href="/planets" className="portal-card">
+          <span className="portal-card__sigil" aria-hidden="true">⊛</span>
           <span className="portal-card__label">Long-Form Study</span>
-          <h2 className="portal-card__title">Saturn — The Celestial King</h2>
+          <h2 className="portal-card__title">The Planetary Archives</h2>
           <p className="portal-card__desc">
-            A fourteen-chapter symbolic and philosophical exploration of Saturn: from the Golden Age
-            and Hyperborea to alchemy, the Black Cube, and the spiritual quest for the primordial self.
+            Multi-chapter symbolic explorations of Saturn, Jupiter, Mars, and beyond — myth,
+            alchemy, and esoteric tradition woven into deep-study entries.
           </p>
           <span className="portal-card__arrow" aria-hidden="true">→</span>
         </Link>

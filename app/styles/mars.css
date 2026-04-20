@@ -1,0 +1,445 @@
+/* ═══════════════════════════════════════════════════════════════
+   MARS ARTICLE
+   Hero orb/dust, crimson chapter accents, cosmic twin diagram,
+   phantom engineer list, blood memory timeline, return callout,
+   closing triad, war-of-shadows duality block.
+   Inherits all global chapter/layout/nav classes from saturn.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── MARS HERO ───────────────────────────────────────────────── */
+.mars-hero {
+  background: radial-gradient(ellipse 80% 60% at 50% 55%, #1a0808 0%, var(--clr-bg) 70%);
+}
+
+.mars-orb {
+  position: absolute;
+  width: clamp(200px, 40vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 40% 38%,
+    #c84820 0%, #a03818 22%, #8a2e10 38%, #b84820 52%, #7a2208 66%, #a03418 80%, #4a1205 100%
+  );
+  box-shadow:
+    0 0 80px rgba(180, 60, 20, 0.45),
+    0 0 200px rgba(140, 40, 10, 0.28),
+    inset -30px -30px 60px rgba(0, 0, 0, 0.65),
+    inset 20px 20px 40px rgba(200, 80, 30, 0.18);
+  animation: mars-orb-pulse 6s ease-in-out infinite alternate;
+  top: 50%; left: 50%;
+  translate: -50% -56%;
+  z-index: 2;
+}
+
+/* Surface texture via pseudo-elements */
+.mars-orb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 60% 25% at 30% 70%, rgba(90, 25, 8, 0.7) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 15% at 65% 40%, rgba(70, 18, 5, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 10% at 50% 55%, rgba(180, 80, 30, 0.2) 0%, transparent 70%),
+    radial-gradient(circle at 72% 28%, rgba(120, 45, 15, 0.55) 0%, transparent 30%);
+}
+
+/* Dust storm / haze edge */
+.mars-orb::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(180, 60, 20, 0.18) 80%, rgba(160, 40, 10, 0.35) 100%);
+  animation: mars-dust 10s ease-in-out infinite alternate;
+}
+
+@keyframes mars-orb-pulse {
+  from {
+    box-shadow:
+      0 0 80px rgba(180, 60, 20, 0.45), 0 0 200px rgba(140, 40, 10, 0.28),
+      inset -30px -30px 60px rgba(0, 0, 0, 0.65), inset 20px 20px 40px rgba(200, 80, 30, 0.18);
+  }
+  to {
+    box-shadow:
+      0 0 120px rgba(220, 80, 30, 0.55), 0 0 280px rgba(180, 55, 15, 0.35),
+      inset -30px -30px 60px rgba(0, 0, 0, 0.65), inset 20px 20px 40px rgba(230, 100, 40, 0.25);
+  }
+}
+
+@keyframes mars-dust {
+  from { opacity: 0.6; transform: rotate(0deg); }
+  to   { opacity: 1;   transform: rotate(4deg); }
+}
+
+/* ── MARS ORBIT RINGS (thin, distant-feeling) ────────────────── */
+.mars-rings {
+  position: absolute;
+  top: 50%; left: 50%;
+  translate: -50% -56%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  transform-origin: center center;
+  border-style: solid;
+}
+
+.mring--1 {
+  width: clamp(280px, 54vw, 620px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-width: 1px;
+  border-color: rgba(180, 60, 20, 0.2);
+  animation: mring-pulse 7s ease-in-out infinite alternate;
+}
+
+.mring--2 {
+  width: clamp(360px, 68vw, 780px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-width: 1px;
+  border-color: rgba(180, 60, 20, 0.1);
+  animation: mring-pulse 7s ease-in-out 0.7s infinite alternate;
+}
+
+.mring--3 {
+  width: clamp(440px, 82vw, 940px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-width: 1px;
+  border-color: rgba(180, 60, 20, 0.05);
+  animation: mring-pulse 7s ease-in-out 1.4s infinite alternate;
+}
+
+@keyframes mring-pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+/* ── MARS HERO TITLE GRADIENT ────────────────────────────────── */
+.mars-hero .hero__title {
+  background: linear-gradient(180deg, #f0a080 0%, #c84820 40%, #8a2a08 80%, #3a0e02 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(200, 70, 20, 0.5));
+}
+
+.mars-hero .hero__eyebrow {
+  color: #d06040;
+}
+
+/* ── CHAPTER DIVIDER: MARS SIGIL ─────────────────────────────── */
+.mars-divider .sigil {
+  color: #c04020;
+}
+
+/* ── CHAPTER HEADER / TEXT ACCENTS ──────────────────────────── */
+.mars-page .chapter-header {
+  border-left-color: #c04020;
+}
+
+.mars-page .chapter-num {
+  color: #d06040;
+}
+
+.mars-page .chapter-title {
+  color: #e08060;
+}
+
+.mars-page .chapter-intro__heading {
+  color: #e08060;
+}
+
+.mars-page .pull-quote {
+  border-left-color: #c04020;
+  color: #e08060 !important;
+}
+
+.mars-page .chapter-quote {
+  border-left-color: #c04020;
+  background: rgba(180, 60, 20, 0.04);
+}
+
+.mars-page .toc-num {
+  color: #d06040;
+}
+
+.mars-page .toc-card:hover {
+  background: rgba(180, 60, 20, 0.08);
+  color: #d06040;
+}
+
+.mars-page .chapter-body strong {
+  color: #e08060;
+}
+
+.mars-page .chapter-body em {
+  color: #f0a080;
+}
+
+.mars-page .info-card__title {
+  color: #d06040;
+}
+
+.mars-page .info-card:hover {
+  border-color: rgba(180, 60, 20, 0.35);
+}
+
+.mars-page .section-eyebrow {
+  color: #d06040;
+}
+
+.mars-page .btn--primary {
+  background: rgba(180, 60, 20, 0.15);
+  border-color: rgba(180, 60, 20, 0.5);
+  color: #e08060;
+}
+
+.mars-page .btn--primary:hover {
+  background: rgba(200, 80, 30, 0.28);
+  border-color: rgba(220, 90, 35, 0.75);
+}
+
+/* ── TWIN DIAGRAM ────────────────────────────────────────────── */
+.twin-diagram {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-block: 2rem;
+  flex-wrap: wrap;
+}
+
+.twin-pole {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.twin-pole--earth {
+  background: rgba(30, 80, 160, 0.08);
+  border: 1px solid rgba(30, 80, 160, 0.25);
+}
+
+.twin-pole--mars {
+  background: rgba(180, 60, 20, 0.08);
+  border: 1px solid rgba(180, 60, 20, 0.25);
+}
+
+.twin-pole h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.twin-pole--earth h3 { color: #5a9adc; }
+.twin-pole--mars  h3 { color: #d06040; }
+
+.twin-pole p {
+  font-size: 0.85rem;
+  color: var(--clr-text-dim);
+  line-height: 1.55;
+}
+
+.twin-arrow {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--clr-text-muted);
+  flex-shrink: 0;
+}
+
+/* ── ENGINEER LIST ───────────────────────────────────────────── */
+.engineer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-block: 1.8rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.engineer-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  transition: background 0.2s;
+}
+
+.engineer-item:last-child { border-bottom: none; }
+.engineer-item:hover { background: rgba(180, 60, 20, 0.06); }
+
+.engineer-item__glyph {
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-top: 0.15rem;
+  opacity: 0.7;
+}
+
+.engineer-item__body strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #d06040;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.engineer-item__body p {
+  font-size: 0.9rem;
+  color: var(--clr-text-dim);
+  margin: 0 !important;
+  line-height: 1.55;
+}
+
+/* ── BLOOD MEMORY TIMELINE ───────────────────────────────────── */
+.blood-timeline {
+  position: relative;
+  margin-block: 2rem;
+  padding-left: 2rem;
+}
+
+.blood-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #c04020, rgba(180, 60, 20, 0.1));
+}
+
+.blood-event {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  transition: border-color 0.2s;
+}
+
+.blood-event:hover { border-color: rgba(180, 60, 20, 0.35); }
+
+.blood-event::before {
+  content: '';
+  position: absolute;
+  left: -1.8rem;
+  top: 1.2rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c04020;
+  border: 2px solid var(--clr-bg);
+  box-shadow: 0 0 8px rgba(180, 60, 20, 0.6);
+}
+
+.blood-event__culture {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #d06040;
+  margin-bottom: 0.35rem;
+}
+
+.blood-event__desc {
+  font-size: 0.9rem;
+  color: var(--clr-text-dim);
+  line-height: 1.6;
+  margin: 0 !important;
+}
+
+/* ── CALLOUT: CRIMSON ────────────────────────────────────────── */
+.callout--crimson {
+  background: rgba(180, 40, 10, 0.07);
+  border: 1px solid rgba(180, 40, 10, 0.28);
+  border-left: 3px solid #c04020;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.2rem 1.5rem;
+  margin-block: 1.5rem;
+}
+
+.callout--crimson p {
+  color: var(--clr-text-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ── WAR DUALITY BLOCK (overrides for mars palette) ─────────── */
+.mars-page .duality-side--gold {
+  background: rgba(180, 60, 20, 0.07);
+  border-color: rgba(180, 60, 20, 0.25);
+}
+
+.mars-page .duality-side--gold h3 { color: #d06040; }
+
+/* ── MARS CLOSING TRIAD ──────────────────────────────────────── */
+.mars-triad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--clr-border);
+}
+
+.mtriad-item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.mtriad-item:hover {
+  background: rgba(180, 60, 20, 0.06);
+  border-color: rgba(180, 60, 20, 0.3);
+}
+
+.mtriad-symbol {
+  display: block;
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.mtriad-item:nth-child(1) .mtriad-symbol { color: #d06040; }
+.mtriad-item:nth-child(2) .mtriad-symbol { color: #8a2a08; }
+.mtriad-item:nth-child(3) .mtriad-symbol { color: #c08060; }
+
+.mtriad-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: #e08060;
+  margin-bottom: 0.6rem;
+}
+
+.mtriad-desc {
+  font-size: 0.82rem;
+  color: var(--clr-text-dim);
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .twin-diagram { flex-direction: column; }
+  .twin-arrow   { transform: rotate(90deg); }
+  .mars-triad   { grid-template-columns: 1fr; }
+  .blood-timeline { padding-left: 1.5rem; }
+}

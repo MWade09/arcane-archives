@@ -32,6 +32,9 @@ export default async function DashboardLayout({
           <Link href="/bookmarks"   className="dash-nav__link">
             <span className="dash-nav__icon" aria-hidden="true">⊳</span> Bookmarks
           </Link>
+          <Link href="/collections" className="dash-nav__link">
+            <span className="dash-nav__icon" aria-hidden="true">📂</span> Collections
+          </Link>
         </nav>
 
         <div className="dash-sidebar__divider" aria-hidden="true" />

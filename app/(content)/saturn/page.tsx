@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SaturnNav from './SaturnNav'
+import ReadingTracker from '@/app/components/ReadingTracker'
+import SmartSummarizer from '@/app/components/SmartSummarizer'
 
 export const metadata: Metadata = {
   title: 'Saturn — The Celestial King',
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 export default function SaturnPage() {
   return (
     <>
+      <ReadingTracker />
       <SaturnNav />
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
@@ -75,6 +78,7 @@ export default function SaturnPage() {
         {/* ── CHAPTER INTRO ──────────────────────────────────────── */}
         <section className="chapter-intro container" id="ch-intro">
           <div className="chapter-intro__body">
+            <SmartSummarizer />
             <h2 className="chapter-intro__heading">Who Is Saturn, and What Does He Want?</h2>
             <figure className="chapter-image">
               <img src="/images/introduction.jpg" alt="Modern conspiracy imagery surrounding the Saturn archetype" loading="lazy" />

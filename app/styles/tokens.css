@@ -54,6 +54,45 @@
   --ease-in:  cubic-bezier(0.64, 0, 0.78, 0);
 }
 
+/* ── THEMES ─────────────────────────────────────────────────── */
+
+/* PAPYRUS (Light/Sepia Mode) */
+[data-theme='papyrus'] {
+  --clr-bg:          #f4f1e6;
+  --clr-bg-alt:      #ece8d9;
+  --clr-surface:     #e4dfcd;
+  --clr-border:      rgba(74, 68, 56, 0.15);
+  
+  --clr-gold-1:      #9c7c2a;
+  --clr-gold-2:      #7c631f;
+  --clr-gold-3:      #5c4a17;
+  --clr-gold-glow:   rgba(156, 124, 42, 0.1);
+
+  --clr-text:        #2c2820;
+  --clr-text-dim:    #5c564a;
+  --clr-text-muted:  #8c8577;
+
+  --clr-accent:      #5c4a8c;
+  --clr-accent-glow: rgba(92, 74, 140, 0.1);
+}
+
+/* MONOLITH (High Contrast / OLED) */
+[data-theme='monolith'] {
+  --clr-bg:          #000000;
+  --clr-bg-alt:      #080808;
+  --clr-surface:     #101010;
+  --clr-border:      rgba(255, 215, 0, 0.2);
+
+  --clr-gold-1:      #ffd700;
+  --clr-gold-2:      #fff4a3;
+  --clr-gold-3:      #ffffff;
+  --clr-gold-glow:   rgba(255, 215, 0, 0.3);
+
+  --clr-text:        #ffffff;
+  --clr-text-dim:    #cccccc;
+  --clr-text-muted:  #888888;
+}
+
 /* ── GLOBAL RESET ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
